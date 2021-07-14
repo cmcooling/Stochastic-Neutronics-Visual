@@ -27,7 +27,6 @@ public class SourceSpawner : MonoBehaviour
 
             if (elapsedTime < simulatedInterval)
             {
-                Debug.Log(simulatedInterval + " "+ elapsedTime);
                 Vector3 startCoordinate = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f));
                 Instantiate(sourcePingPrefab, startCoordinate, Quaternion.identity);
             }
