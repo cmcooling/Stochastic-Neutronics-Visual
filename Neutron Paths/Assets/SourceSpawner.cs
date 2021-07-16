@@ -5,7 +5,7 @@ using UnityEngine;
 public class SourceSpawner : MonoBehaviour
 {
     public float sourceStrength = 1;
-    public GameObject sourcePingPrefab;
+    public GameObject neutronPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,9 @@ public class SourceSpawner : MonoBehaviour
             if (elapsedTime < simulatedInterval)
             {
                 Vector3 startCoordinate = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f));
-                Instantiate(sourcePingPrefab, startCoordinate, Quaternion.identity);
+                GameObject new_neutron = Instantiate(neutronPrefab, startCoordinate, Quaternion.identity);
+
+                new_neutron.GetComponent<NeutronControl>().setIsotropicRandomDirection();
             }
         }
 

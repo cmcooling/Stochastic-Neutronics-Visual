@@ -21,7 +21,5 @@ public class TimeTracker : MonoBehaviour
     {
         simulatedTime += Time.deltaTime * timeDilation;
         timeText.text = simulatedTime.ToString() + "s";
-
-        Debug.Log(simulatedTime.ToString());
     }
 }
