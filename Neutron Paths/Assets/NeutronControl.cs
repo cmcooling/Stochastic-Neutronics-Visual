@@ -5,11 +5,15 @@ using UnityEngine;
 public class NeutronControl : MonoBehaviour
 {
     Vector3 direction;
-    public float speed;
+    NeutronicsData neutronicsData;
+    TimeTracker timeTracker;
+    public GameObject neutronPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject neutronics = GameObject.Find("Neutronics Data");
+        neutronicsData = GameObject.Find("Neutronics Data").GetComponent<NeutronicsData>();
+        timeTracker = GameObject.Find("Time Tracker").GetComponent<TimeTracker>();
     }
 
     public void setIsotropicRandomDirection()
@@ -33,7 +37,9 @@ public class NeutronControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.localPosition += direction * speed * Time.deltaTime;
+        float simulatedInterval = Time.deltaTime * timeTracker.timeDilation;
+        
+        gameObject.transform.localPosition += direction * neutronicsData.speed * simulatedInterval;
 
         if(gameObject.transform.localPosition.x > 0.5f)
         {
@@ -57,6 +63,38 @@ public class NeutronControl : MonoBehaviour
         else if (gameObject.transform.localPosition.z < -0.5f)
         {
             gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z + 1);
+        }
+
+        float timeToDecay = -Mathf.Log(Random.Range(0.0f, 1.0f)) * neutronicsData.lifetime;
+
+        if (timeToDecay < simulatedInterval)
+        {
+            float fission_probability = neutronicsData.k / neutronicsData.chi_bar;
+
+            if (Random.Range(0.0f, 1.0f) < fission_probability)
+            {
+                int n_f = 7;
+                float rand_fission = Random.Range(0, 1.0f);
+                for (int n=0; n < 7; n++)
+                {
+                    if(rand_fission < neutronicsData.p_f_n_cumulative[n])
+                    {
+                        n_f = n;
+                    }
+                }
+
+                for(int i = 0; i < n_f; i++)
+                {
+                    GameObject new_neutron = Instantiate(neutronPrefab, gameObject.transform.localPosition, Quaternion.identity);
+
+                    new_neutron.GetComponent<NeutronControl>().setIsotropicRandomDirection();
+                }
+            }
+
+            
+
+
+            Destroy(gameObject);
         }
     }
 }
