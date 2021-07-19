@@ -80,19 +80,17 @@ public class NeutronControl : MonoBehaviour
                     if(rand_fission < neutronicsData.p_f_n_cumulative[n])
                     {
                         n_f = n;
+                        break;
                     }
                 }
 
                 for(int i = 0; i < n_f; i++)
-                {
+                {   
                     GameObject new_neutron = Instantiate(neutronPrefab, gameObject.transform.localPosition, Quaternion.identity);
-
+        
                     new_neutron.GetComponent<NeutronControl>().setIsotropicRandomDirection();
                 }
             }
-
-            
-
 
             Destroy(gameObject);
         }
