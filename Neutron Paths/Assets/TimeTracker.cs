@@ -9,14 +9,12 @@ public class TimeTracker : MonoBehaviour
     public float timeDilationFactor = 1e-1f;
     public float sourceStrength = 10;
     public GameObject neutronPrefab;
-    public Text timeText;
     public float timeDilation = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         simulatedTime = 0;
-        timeText = GameObject.Find("Canvas/Time Display").GetComponent("Text") as Text;
     }
 
     // Update is called once per frame
@@ -25,7 +23,7 @@ public class TimeTracker : MonoBehaviour
         GameObject[] neutrons = GameObject.FindGameObjectsWithTag("Particle");
         int n_neutron = neutrons.Length;
 
-        if (n_neutron > 100)
+        if (n_neutron > 1000)
         {
             for (int i = 0; i < n_neutron; i++)
             {
@@ -44,7 +42,6 @@ public class TimeTracker : MonoBehaviour
         float interval = SpawnSources(Time.deltaTime * timeDilation);
 
         simulatedTime += interval;
-        timeText.text = simulatedTime.ToString() + "s";
     }
 
     float SpawnSources(float maxInterval)

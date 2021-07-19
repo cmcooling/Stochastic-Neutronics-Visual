@@ -8,6 +8,7 @@ public class NeutronControl : MonoBehaviour
     NeutronicsData neutronicsData;
     TimeTracker timeTracker;
     public GameObject neutronPrefab;
+    public GameObject fissionEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +74,8 @@ public class NeutronControl : MonoBehaviour
 
             if (Random.Range(0.0f, 1.0f) < fission_probability)
             {
+                Instantiate(fissionEffect, gameObject.transform.localPosition, Quaternion.identity);
+
                 int n_f = 7;
                 float rand_fission = Random.Range(0, 1.0f);
                 for (int n=0; n < 7; n++)

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neutronPrefab: {fileID: 6346405446391801747}
+  fissionEffect: {fileID: 7905361255818441862, guid: 06b6713232bf7134792f6eda2b730130, type: 3}
 --- !u!1 &9002893713144588859
 GameObject:
   m_ObjectHideFlags: 0
