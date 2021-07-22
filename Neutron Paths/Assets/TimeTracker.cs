@@ -9,6 +9,9 @@ public class TimeTracker : MonoBehaviour
     public float timeDilationFactor = 1e-1f;
     public GameObject neutronPrefab;
     public float timeDilation = 1;
+    float resetTimer;
+    bool reset = false;
+    public GameObject resetBanners;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,18 @@ public class TimeTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (resetTimer > 1)
+        {
+            resetBanners.SetActive(false);
+            simulatedTime = 0;
+            resetTimer = 0;
+            reset = false;
+        }
+        else if(reset){
+            resetTimer += Time.deltaTime;
+            return;
+        }
+
         GameObject[] neutrons = GameObject.FindGameObjectsWithTag("Particle");
         int n_neutron = neutrons.Length;
 
@@ -29,6 +44,10 @@ public class TimeTracker : MonoBehaviour
                 Destroy(neutrons[i]);
             }
             timeDilation = timeDilation = timeDilationFactor;
+            reset = true;
+            resetBanners.SetActive(true);
+            return;
+
         }else if (n_neutron > 0)
         {
             timeDilation = timeDilationFactor;
@@ -41,7 +60,6 @@ public class TimeTracker : MonoBehaviour
         float interval = SpawnSources(Time.deltaTime * timeDilation);
 
         simulatedTime += interval;
-        Debug.Log(simulatedTime + " " + interval);
     }
 
     float SpawnSources(float maxInterval)
@@ -66,4 +84,5 @@ public class TimeTracker : MonoBehaviour
         }
 
     }
+
 }
