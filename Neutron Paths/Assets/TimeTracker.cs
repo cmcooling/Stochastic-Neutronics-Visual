@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TimeTracker : MonoBehaviour
 {
-    public float simulatedTime;
+    public double simulatedTime;
     public float timeDilationFactor = 1e-1f;
     public GameObject neutronPrefab;
     public float timeDilation = 1;
@@ -41,6 +41,7 @@ public class TimeTracker : MonoBehaviour
         float interval = SpawnSources(Time.deltaTime * timeDilation);
 
         simulatedTime += interval;
+        Debug.Log(simulatedTime + " " + interval);
     }
 
     float SpawnSources(float maxInterval)

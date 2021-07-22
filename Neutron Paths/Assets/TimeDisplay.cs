@@ -17,6 +17,6 @@ public class TimeDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeDisplay.text = timeTracker.simulatedTime.ToString() + "s";
+        timeDisplay.text = "t = " + timeTracker.simulatedTime.ToString("0.000000") + "s";
     }
 }
