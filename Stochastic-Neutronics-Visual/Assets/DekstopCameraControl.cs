@@ -27,7 +27,7 @@ public class DekstopCameraControl : MonoBehaviour
     void Start()
     {
         camera_ref = Camera.main;
-        target = GameObject.FindGameObjectsWithTag("Centre")[0];
+        target = GameObject.FindGameObjectsWithTag("Target")[0];
         height = 2.0f;
         longLat = new Vector2(0, 0);
 
