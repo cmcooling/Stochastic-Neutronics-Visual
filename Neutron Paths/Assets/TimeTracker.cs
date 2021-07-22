@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class TimeTracker : MonoBehaviour
 {
-    float simulatedTime;
+    public float simulatedTime;
     public float timeDilationFactor = 1e-1f;
-    public float sourceStrength = 10;
     public GameObject neutronPrefab;
     public float timeDilation = 1;
 
@@ -23,7 +22,7 @@ public class TimeTracker : MonoBehaviour
         GameObject[] neutrons = GameObject.FindGameObjectsWithTag("Particle");
         int n_neutron = neutrons.Length;
 
-        if (n_neutron > 1000)
+        if (n_neutron > 500)
         {
             for (int i = 0; i < n_neutron; i++)
             {
@@ -47,7 +46,8 @@ public class TimeTracker : MonoBehaviour
     float SpawnSources(float maxInterval)
     {
         float rand = Random.Range(0.0f, 1.0f);
-        float timeToNext = -Mathf.Log(rand) / sourceStrength;
+        NeutronicsData neutronicsData = GameObject.Find("Neutronics Data").GetComponent<NeutronicsData>();
+        float timeToNext = -Mathf.Log(rand) / neutronicsData.sourceStrength;
 
         if (timeToNext < maxInterval)
         {

@@ -10,6 +10,7 @@ public class NeutronicsData : MonoBehaviour
     public float[] p_f_n;
     public float chi_bar;
     public float[] p_f_n_cumulative;
+    public float sourceStrength;
 
     // Start is called before the first frame update
     void Start()

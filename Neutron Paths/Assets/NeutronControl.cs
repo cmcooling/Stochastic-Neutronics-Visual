@@ -38,20 +38,28 @@ public class NeutronControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        moveInsideBox();
+
+        fateSelector();
+    }
+
+    void moveInsideBox()
+    {
         float simulatedInterval = Time.deltaTime * timeTracker.timeDilation;
-        
+
         gameObject.transform.localPosition += direction * neutronicsData.speed * simulatedInterval;
 
-        if(gameObject.transform.localPosition.x > 0.5f)
+        if (gameObject.transform.localPosition.x > 0.5f)
         {
             gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x - 1, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
-        } else if (gameObject.transform.localPosition.x < -0.5f)
+        }
+        else if (gameObject.transform.localPosition.x < -0.5f)
         {
             gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x + 1, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
         }
         else if (gameObject.transform.localPosition.y > 0.5f)
         {
-            gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x , gameObject.transform.localPosition.y - 1, gameObject.transform.localPosition.z);
+            gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y - 1, gameObject.transform.localPosition.z);
         }
         else if (gameObject.transform.localPosition.y < -0.5f)
         {
@@ -65,6 +73,11 @@ public class NeutronControl : MonoBehaviour
         {
             gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z + 1);
         }
+    }
+
+    void fateSelector()
+    {
+        float simulatedInterval = Time.deltaTime * timeTracker.timeDilation;
 
         float timeToDecay = -Mathf.Log(Random.Range(0.0f, 1.0f)) * neutronicsData.lifetime;
 
@@ -78,19 +91,19 @@ public class NeutronControl : MonoBehaviour
 
                 int n_f = 7;
                 float rand_fission = Random.Range(0, 1.0f);
-                for (int n=0; n < 7; n++)
+                for (int n = 0; n < 7; n++)
                 {
-                    if(rand_fission < neutronicsData.p_f_n_cumulative[n])
+                    if (rand_fission < neutronicsData.p_f_n_cumulative[n])
                     {
                         n_f = n;
                         break;
                     }
                 }
 
-                for(int i = 0; i < n_f; i++)
-                {   
+                for (int i = 0; i < n_f; i++)
+                {
                     GameObject new_neutron = Instantiate(neutronPrefab, gameObject.transform.localPosition, Quaternion.identity);
-        
+
                     new_neutron.GetComponent<NeutronControl>().setIsotropicRandomDirection();
                 }
             }
