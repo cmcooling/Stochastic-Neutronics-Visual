@@ -15,7 +15,7 @@ public class NeutronicsData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        p_f_n = new float[] {0.05f, 0.15f, 0.29f, 0.29f, 0.15f, 0.05f, 0.01f, 0.01f};
+        p_f_n = new float[] {0.0319004f, 0.1725213f, 0.3361397f, 0.3038798f, 0.1266155f, 0.0261843f, 0.0026170f, 0.0001421f };
         chi_bar = 0;
         p_f_n_cumulative = new float[8];
         for (int i=0; i<8; i++)
