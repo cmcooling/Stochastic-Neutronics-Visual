@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DekstopCameraControl : MonoBehaviour
 {
-    Camera camera_ref;
+    public Camera camera_ref;
     public GameObject target;
     static float minHeight = 1.0f;
     static float maxHeight = 2.0f;
@@ -27,7 +27,6 @@ public class DekstopCameraControl : MonoBehaviour
     void Start()
     {
         camera_ref = Camera.main;
-        target = GameObject.FindGameObjectsWithTag("Target")[0];
         height = 2.0f;
         longLat = new Vector2(0, 0);
 
