@@ -250,7 +250,7 @@ MonoBehaviour:
   sliderSpeed: 0.2
   hapticPulseLength: 0.1
   hapticPulseFrequency: 0.1
-  hapticFloatAmplitude: 0.01
+  hapticPulseAmplitude: 0
 --- !u!1001 &32389127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,12 +1003,16 @@ PrefabInstance:
       value: OculusDataDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 5784568920249764971, guid: f71f6e9db18279b4cb606ac441fb76ef, type: 3}
+      propertyPath: timeTracker
+      value: 
+      objectReference: {fileID: 1739964625}
+    - target: {fileID: 5784568920249764971, guid: f71f6e9db18279b4cb606ac441fb76ef, type: 3}
       propertyPath: neutronicsData
       value: 
       objectReference: {fileID: 581341788}
     - target: {fileID: 7580176135140892812, guid: f71f6e9db18279b4cb606ac441fb76ef, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7580176135140892812, guid: f71f6e9db18279b4cb606ac441fb76ef, type: 3}
       propertyPath: m_LocalScale.x
@@ -1020,11 +1024,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7580176135140892812, guid: f71f6e9db18279b4cb606ac441fb76ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.423
+      value: -0.422
       objectReference: {fileID: 0}
     - target: {fileID: 7580176135140892812, guid: f71f6e9db18279b4cb606ac441fb76ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.717
+      value: 0.728
       objectReference: {fileID: 0}
     - target: {fileID: 7580176135140892812, guid: f71f6e9db18279b4cb606ac441fb76ef, type: 3}
       propertyPath: m_LocalPosition.z
