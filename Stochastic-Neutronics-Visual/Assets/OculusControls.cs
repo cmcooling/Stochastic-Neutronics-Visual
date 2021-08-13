@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class OculusControls : MonoBehaviour
 {
-    public NeutronicsData neutronicsData;
-    float kSlider;
-    float sourceSlider;
-    public float sliderSpeed;
-    float hapticTimerLeft;
-    float hapticTimerRight;
-    public float hapticPulseLength;
-    public float hapticPulseFrequency;
-    public float hapticPulseAmplitude;
+    public NeutronicsData neutronicsData; // A reference to the neutronics data
+    float kSlider; // A value between 0 and 1 to mirror the slider value of the K Control prefab. 0 represents the minimum value and 1 the maximum
+    float sourceSlider; // A value between 0 and 1 to mirror the slider value of the K Control prefab. 0 represents the minimum value and 1 the maximum
+    public float sliderSpeed; // The rate at which sliders change per second if the appropriate button is pressed
+    float hapticTimerLeft; // If positive the left controller is vibrating. If negative, it's not.
+    float hapticTimerRight; // If positive the right controller is vibrating. If negative, it's not.
+    public float hapticPulseLength; // The length of time that haptic pulses continue after the relevant trigger is released
+    public float hapticPulseFrequency; // The frequency of the haptic pulse
+    public float hapticPulseAmplitude; // The intensity of the haptic pulse
 
     // Start is called before the first frame update
     void Start()
     {
+        // Set some intial values
         kSlider = 0.5f;
         sourceSlider = 0f;
-
         hapticTimerLeft = 0;
         hapticTimerRight = 0;
 
-        //neutronicsData = GameObject.Find("Neutronics Data").GetComponent<NeutronicsData>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Check if any relevant buttons are pressed, change the slider value and turn on the haptic pulse
+        // The hapticTimer is set to the haptic pulse length so it will remain on for at least that long
         if (OVRInput.Get(OVRInput.RawButton.LIndexTrigger))
         {
             sourceSlider = Mathf.Min(sourceSlider + Time.deltaTime * sliderSpeed, 1.0f);
@@ -51,7 +51,7 @@ public class OculusControls : MonoBehaviour
             hapticTimerRight = hapticPulseLength;
         }
 
-        // Change the source strength and k-value
+        // Calcualte the source strength and k-value from the slider values
         neutronicsData.sourceStrength = Mathf.Pow(10, sourceSlider * 6);
 
         if (kSlider < 1.0f / 3.0f)
@@ -67,7 +67,7 @@ public class OculusControls : MonoBehaviour
             neutronicsData.k = 1.02f + (kSlider - 2.0f / 3.0f) * 3.0f * (neutronicsData.chi_bar - 1.02f);
         }
 
-        // Turn the haptic pulses on or off dependent on the value the haptic timers
+        // Turn the haptic pulses on if the haptic timers are positive
         if (hapticTimerLeft > 0.0f)
         {
             OVRInput.SetControllerVibration(hapticPulseFrequency, hapticPulseAmplitude, OVRInput.Controller.LTouch);
@@ -77,6 +77,7 @@ public class OculusControls : MonoBehaviour
             OVRInput.SetControllerVibration(hapticPulseFrequency, hapticPulseAmplitude, OVRInput.Controller.RTouch);
         }
 
+        // Turn the haptic pulses off if the haptic timers are negative
         if (hapticTimerLeft < 0.0f)
         {
             OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);

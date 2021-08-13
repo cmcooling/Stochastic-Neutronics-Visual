@@ -5,18 +5,13 @@ using UnityEngine.UI;
 
 public class TimeDisplay : MonoBehaviour
 {
-    TimeTracker timeTracker;
-    Text timeDisplay;
-    // Start is called before the first frame update
-    void Start()
-    {
-        timeTracker = GameObject.Find("Time Tracker").GetComponent<TimeTracker>();
-        timeDisplay = gameObject.GetComponent<Text>();
-    }
+    public TimeTracker timeTracker; // A reference to the time tracker
+    public Text timeDisplay; // A reference ot the time display in the UI
 
     // Update is called once per frame
     void Update()
     {
+        // Update the time display on the screen
         timeDisplay.text = "t = " + timeTracker.simulatedTime.ToString("0.000000") + "s";
     }
 }
