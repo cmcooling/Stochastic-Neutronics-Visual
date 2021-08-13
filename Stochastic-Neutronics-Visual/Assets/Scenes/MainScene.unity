@@ -232,7 +232,7 @@ Transform:
   - {fileID: 569642216}
   - {fileID: 1521399235}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11909172
 MonoBehaviour:
@@ -892,6 +892,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51022c3595255b4ba60d97982506c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeTracker: {fileID: 1739964625}
+  timeDisplay: {fileID: 251911878}
 --- !u!114 &251911878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,6 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6698f33b36e604984cd432ee503eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  neutronicsData: {fileID: 581341788}
   text: {fileID: 1423355287}
 --- !u!114 &328046601
 MonoBehaviour:
@@ -1934,6 +1937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 133179542}
+  neutronicsData: {fileID: 581341788}
 --- !u!114 &634117440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3997,12 +4001,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736226941}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1838831402}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1739964624
 GameObject:
@@ -4040,6 +4044,8 @@ MonoBehaviour:
   resetBanners: {fileID: 1648427380}
   nNeutronsMax: 500
   resetDuration: 1
+  interval: 0
+  neutronicsData: {fileID: 581341788}
 --- !u!4 &1739964626
 Transform:
   m_ObjectHideFlags: 0
@@ -4185,8 +4191,9 @@ Transform:
   - {fileID: 1640787259}
   - {fileID: 963194228}
   - {fileID: 134543775}
+  - {fileID: 1736226942}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1853735930
 GameObject:
