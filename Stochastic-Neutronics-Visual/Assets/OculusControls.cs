@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attached to the "Oculus Components" GameOBject
+// Uses the controls on the controller to adjust the source strength and k-value
+// Causes a controller to vinrate when a button on it is pressed
 public class OculusControls : MonoBehaviour
 {
     public NeutronicsData neutronicsData; // A reference to the neutronics data

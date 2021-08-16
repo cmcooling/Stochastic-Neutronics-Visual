@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attached to the "Desktop Components/Main Camera" GameObject
+// Changes the location and rotation of the camera when the controls are pressed
 public class DekstopCameraControl : MonoBehaviour
 {
-    public Camera camera_ref; // A reference to the main camera
+    public Camera cameraRef; // A reference to the main camera
     public GameObject target; // A reference to a GameObject at the origin
     static float minDist = 1.0f; // The minimum distance of the camera from the origin
     static float maxDist = 2.0f; // The maximum distance of the camera from the origin
@@ -51,10 +53,10 @@ public class DekstopCameraControl : MonoBehaviour
         float y = Mathf.Sin(longLat.y) * height;
 
         // Update the position of the camera
-        camera_ref.transform.position = new Vector3(x, y, z);
+        cameraRef.transform.position = new Vector3(x, y, z);
 
         // Cause the camera to look at the origin (the centre of the square)
-        camera_ref.transform.LookAt(target.transform);
+        cameraRef.transform.LookAt(target.transform);
     }
 
     float MoveSpeed()

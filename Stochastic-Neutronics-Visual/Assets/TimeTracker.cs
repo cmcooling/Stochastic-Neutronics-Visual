@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Attached to the "Time Tracker" GameObject
+// Controls the passage of time and the production of neutrons from the source
 public class TimeTracker : MonoBehaviour
 {
     public double simulatedTime = 0; // The current simulated time (s)

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Attached to the "Desktop Components/Canvas/Source Display" component
+// Activated when the value of "Desktop Component/Canvas/Source Slider" slider changes
+// Updates the source strength of the sytem and the text displaying the source strength
 public class SourceControl : MonoBehaviour
 {
     public Text text; // A reference to the text displaying the source strength

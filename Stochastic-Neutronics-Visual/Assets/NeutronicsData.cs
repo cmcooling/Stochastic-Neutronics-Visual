@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attached to the "Neutronics Data" GameObject
+// Stores various bits of neutronic data to define the system
 public class NeutronicsData : MonoBehaviour
 {
     public float speed; // The speed of the neutrons (m/s)

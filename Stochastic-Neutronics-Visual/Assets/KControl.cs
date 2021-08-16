@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Is attached to the "Desktop Components/Canvas/K Slider" GameObject
+// Activated when the value of "Desktop Component/Canvas/K Slider" slider changes
+// Updates the k-value of the sytem and the text displaying the k-vlaue
 public class KControl : MonoBehaviour
 {
     public NeutronicsData neutronicsData; // A reference to the neutronics data

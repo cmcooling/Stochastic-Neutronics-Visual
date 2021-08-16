@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attached to the "Oculus Components/Right Hand" and "Oculus Components/ Left Hand" GameObjects
+// Updates the position and orientation of the controllers relative to the headset
 public class ControllerOrientation : MonoBehaviour
 {
     public Transform trackingSpace; // This will be a reference to the TrackingSpace component of OVRCameraRig component of OVRPLayerController

@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attached to the Neutron prefab
+// Defines a random direction for the neutron to head in on creation
+// Moves the neutron along that direction every frame
+// Checks to see if the neutron is absorbed or fissions each frame
+// If the neutron fissions, also chooses how many neutrons are created and creates them
 public class NeutronControl : MonoBehaviour
 {
     Vector3 direction; // The direction the neutron is heading in

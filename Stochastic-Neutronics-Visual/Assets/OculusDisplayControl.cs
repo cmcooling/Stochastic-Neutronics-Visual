@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Attached to the "Oculus Components/Oculus Data Display" GameObject
+// Updates the time, source and k values in the data display in the Oculus version
 public class OculusDisplayControl : MonoBehaviour
 {
     public TextMesh kText; // A reference to the text component which displays the value of k

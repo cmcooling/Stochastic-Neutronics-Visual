@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Attached to the "Desktop Components/Canvas/Time Display" GameObject
+// Updates the time displayed
 public class TimeDisplay : MonoBehaviour
 {
     public TimeTracker timeTracker; // A reference to the time tracker
