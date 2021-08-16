@@ -70,8 +70,6 @@ public class OculusControls : MonoBehaviour
             neutronicsData.k = 1.02f + (kSlider - 2.0f / 3.0f) * 3.0f * (neutronicsData.chi_bar - 1.02f);
         }
 
-        Debug.Log(OVRInput.GetConnectedControllers());
-
         // Turn the haptic pulses on if the haptic timers are positive
         if (hapticTimerLeft > 0.0f)
         {
