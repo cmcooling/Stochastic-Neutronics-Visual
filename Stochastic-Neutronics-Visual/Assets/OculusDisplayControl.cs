@@ -38,6 +38,6 @@ public class OculusDisplayControl : MonoBehaviour
         sourceText.text = "Source = " + neutronicsData.sourceStrength.ToString(format) + "n/s";
 
         // Update the text of the timeText component to match the current simulated time
-        timeText.text = "Time: " + timeTracker.simulatedTime + "s";
+        timeText.text = "Time: " + timeTracker.simulatedTime.ToString("0.000000") + "s";
     }
 }
