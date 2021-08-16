@@ -1,12 +1,11 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class csDemoScenceControl : MonoBehaviour {
 
     public GameObject[] AllEffect;
     int i;
-    public Text Text;
+    public GUIText Text;
     public Transform mg;
     GameObject MakedObject;
 
