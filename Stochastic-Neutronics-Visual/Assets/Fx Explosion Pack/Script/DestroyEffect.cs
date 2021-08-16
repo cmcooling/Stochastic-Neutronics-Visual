@@ -2,19 +2,12 @@
 using System.Collections;
 
 public class DestroyEffect : MonoBehaviour {
-    private float elapsedTime;
-    private void Start()
-    {
-        elapsedTime = 0;
-    }
 
+	void Update ()
+	{
 
-    void Update()
-    {
-        elapsedTime += Time.deltaTime;
-        if (elapsedTime > 1)
-        {
-            Destroy(gameObject);
-        }
-    }
+		if(Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.C))
+		   Destroy(transform.gameObject);
+	
+	}
 }
