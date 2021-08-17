@@ -8,6 +8,8 @@ This project contains a project made in [Unity](https://unity.com/) which simula
 
 ## Using the Project
 
+This Gituhb repository has a .gitignore file designed to cause good behaviour in the context of a Unity project. In addition, the .gitattributes file uses [Git Large File Storage (LFS)](https://git-lfs.github.com/) to allow efficient version control of the large files used within Unity. You may need to authorise or install Git LFS on your machine when cloning this repository.
+
 To open the project, you will need to download the [Unity Hub and the Unity Editor](https://unity3d.com/get-unity/download). The project was built in Unity 2020.3.14f1 so you could download this version of the engine or download a newer version then [upgrade the project to your newer version](https://docs.unity3d.com/Manual/GettingStartedOpeningProjects.html). If you want to create a build of the project, you will need to install one or more of the following modules:
 
 * Universal Windows Platform Build Support (for Windows)
