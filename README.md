@@ -29,6 +29,12 @@ To use the project on an Oculus Quest 2, you will also need:
 * To have set your device to [developer mode](https://developer.oculus.com/documentation/native/android/mobile-device-setup/),
 * To launch Oculus Rift from the Quest menu. 
 
+## Project Overview
+
+The project uses a number of different Unity features and [packages](https://docs.unity3d.com/Manual/PackagesList.html). Some of these appear in the ```Packages``` folder, others appear in the ```Assests``` folder. A summar of some of these packages are as follows:
+
+* 
+
 
 
 
