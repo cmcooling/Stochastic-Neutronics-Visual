@@ -30,7 +30,21 @@ To use the project on an Oculus Quest 2, you will also need:
 
 
 
+## Citing this Project
 
+This project is distributed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode). As such, you may take inspiration from or it adapt it or aspects of it into non-commecial work as you wish. If you use a substantial portion of the content of this project (for example, to produce a research code), please reference this project in any journal papers, conference papers, ec to acknolwedge its use. A bibtex reference is provided below for convenience:
+
+```bibtex
+@misc{Cooling2021,
+  author = {Cooling, Chris},
+  title = {Stochastic-Neutronics-Visual},
+  year = {2021},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/coolernato/Stochastic-Neutronics-Visual}},
+  note = {Imperial College London Graduate School}
+}
+```
 
 ## Bibliography
 
